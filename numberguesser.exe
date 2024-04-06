@@ -1,0 +1,29 @@
+
+using System;
+using System.Runtime;
+using System.Runtime.InteropServices.Marshalling;
+double num01;
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.Title = "Computer Guesses a Number";
+Console.Write("Please enter a number between 1 and 100000: ");
+num01 = Convert.ToDouble(Console.ReadLine());
+Console.ReadKey();
+Console.WriteLine("finding number...");
+
+Random numberGen = new Random();
+
+
+
+double roll= 0;
+int attemps = 0;
+
+while(roll != num01) {
+    roll = numberGen.Next(1, 100000);
+    Console.Write(" number: " + roll );
+    attemps++;
+
+
+
+}
+Console.Write(" Number is guessed, it took " + attemps + "  attempts to guess number " + num01 );
+Console.ReadKey();
